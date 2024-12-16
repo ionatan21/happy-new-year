@@ -1,0 +1,62 @@
+.count-container {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 100;
+}
+
+@media (min-width: 600px) {
+  .title {
+    font-family: "Allura", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 7rem;
+    color: red;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    user-select: none;
+  }
+
+  .countdown {
+    font-family: "Allura", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5rem;
+    user-select: none;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-family: "Allura", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 7rem;
+    color: red;
+    border-radius: 20px;
+    text-align: center;
+    margin-inline: 25px;
+    user-select: none;
+  }
+
+  .countdown {
+    font-family: "Allura", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    margin-inline: 25px;
+    border-radius: 20px;
+    text-align: center;
+    user-select: none;
+  }
+}

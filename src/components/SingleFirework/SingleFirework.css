@@ -1,0 +1,22 @@
+#single-firework {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  opacity:0.8;
+  animation: opacity-0 2s normal forwards;
+  animation-delay: 5000ms;
+}
+
+@keyframes opacity-0 {
+    0%{
+        opacity: 0.8;
+    }
+    100%{
+        opacity: 0;
+    }
+}
