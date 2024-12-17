@@ -6,6 +6,7 @@ import { Typewriter } from "../Typewriter/Typewriter";
 
 const CountdownToNewYear = () => {
   const [timeLeft, setTimeLeft] = useState(null);
+  const [fireworks, setFireworks] = useState(false);
   const [isToday, setIsToday] = useState(false);
   const [dayLabel, setDayLabel] = useState("días");
   const [hoursLabel, setHoursLabel] = useState("horas");
@@ -49,13 +50,19 @@ const CountdownToNewYear = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  if (!timeLeft) return null;
 
-  if (isToday) {
-    setTimeout(() => {
-      setShowTypewriter(true);
-    }, 4000);
-  }
+  useEffect(() => {
+    if (isToday) {
+      const fireworksTimeout = setTimeout(() => {
+        setShowTypewriter(true);
+      }, 5000);
+
+      return () => clearTimeout(fireworksTimeout);
+    }
+  }, [isToday]);
+
+
+  if (!timeLeft) return null;
 
   return (
     <>
@@ -79,7 +86,7 @@ const CountdownToNewYear = () => {
           </p>
         </div>
       )}
-      <Background />
+      <Background activateFireworks={showTypewriter}/>
     </>
   );
 };

@@ -11,6 +11,18 @@
   z-index: 100;
 }
 
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 @media (min-width: 600px) {
   .title {
     font-family: "Allura", cursive;
@@ -22,6 +34,9 @@
     border-radius: 20px;
     text-align: center;
     user-select: none;
+    animation: fade-in-down 1s ease-out forwards;
+    animation-delay: 200ms;
+    opacity: 0;
   }
 
   .countdown {
@@ -33,6 +48,9 @@
     padding: 20px;
     border-radius: 20px;
     text-align: center;
+    animation: fade-in-down 1s ease-out forwards;
+    animation-delay: 200ms;
+    opacity: 0;
   }
 }
 
@@ -47,6 +65,9 @@
     text-align: center;
     margin-inline: 25px;
     user-select: none;
+    animation: fade-in-down 1s ease-out forwards;
+    animation-delay: 200ms;
+    opacity: 0;
   }
 
   .countdown {
@@ -58,5 +79,8 @@
     border-radius: 20px;
     text-align: center;
     user-select: none;
+    animation: fade-in-down 1s ease-out forwards;
+    animation-delay: 200ms;
+    opacity: 0; 
   }
 }

@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
-import './background.css'
+import './background.css';
 
-const Background = () => {
+const Background = ({ speed = 400, activateFireworks = false }) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -100,10 +100,10 @@ const Background = () => {
     }
 
     const createStars = () => {
-      const starCount = 150; 
+      const starCount = 150;
       for (let i = 0; i < starCount; i++) {
         const x = Math.random() * canvas.width;
-        const y = Math.random() * canvas.height; 
+        const y = Math.random() * canvas.height;
         const radius = Math.random() * 1.5;
         const opacity = Math.random() * 0.8 + 0.2;
         stars.push(new Star(x, y, radius, opacity));
@@ -158,15 +158,26 @@ const Background = () => {
       const targetX = Math.random() * canvas.width;
       const targetY = Math.random() * canvas.height * 0.5;
       fireworks.push(new Firework(x, y, targetX, targetY));
-    }, 400);
+    }, speed);
 
     createStars();
     animate();
 
+  
+    if (activateFireworks) {
+      for (let i = 0; i < 50; i++) {
+        const x = Math.random() * canvas.width;
+        const y = canvas.height;
+        const targetX = Math.random() * canvas.width;
+        const targetY = Math.random() * canvas.height * 0.5;
+        fireworks.push(new Firework(x, y, targetX, targetY));
+      }
+    }
+
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [speed, activateFireworks]);
 
   return <canvas id='background' ref={canvasRef} />;
 };
