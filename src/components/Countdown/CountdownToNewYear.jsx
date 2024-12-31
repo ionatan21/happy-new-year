@@ -6,7 +6,6 @@ import { Typewriter } from "../Typewriter/Typewriter";
 
 const CountdownToNewYear = () => {
   const [timeLeft, setTimeLeft] = useState(null);
-  const [fireworks, setFireworks] = useState(false);
   const [isToday, setIsToday] = useState(false);
   const [dayLabel, setDayLabel] = useState("días");
   const [hoursLabel, setHoursLabel] = useState("horas");
@@ -17,12 +16,7 @@ const CountdownToNewYear = () => {
   const TargetYear = currentYear + 1;
 
   useEffect(() => {
-    let targetDate = new Date(`${currentYear}-09-21T00:00:00`);
-
-    const now = new Date();
-    if (now > targetDate) {
-      targetDate = new Date(`${TargetYear}-01-01T00:00:00`); // Establecer la fecha para el próximo año
-    }
+    let targetDate = new Date(`${TargetYear}-01-01T00:00:00`);
 
     const updateCountdown = () => {
       const now = new Date();
@@ -50,17 +44,16 @@ const CountdownToNewYear = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-
   useEffect(() => {
     if (isToday) {
       const fireworksTimeout = setTimeout(() => {
         setShowTypewriter(true);
+        
       }, 5000);
 
       return () => clearTimeout(fireworksTimeout);
     }
   }, [isToday]);
-
 
   if (!timeLeft) return null;
 
@@ -86,7 +79,8 @@ const CountdownToNewYear = () => {
           </p>
         </div>
       )}
-      <Background activateFireworks={showTypewriter}/>
+      <p className="made-by">Hecho por <a href="">Jonatan</a></p>
+      <Background activateFireworks={showTypewriter} />
     </>
   );
 };

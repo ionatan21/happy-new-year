@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@expo-google-fonts/cedarville-cursive": "^0.2.3",
+    "@vercel/analytics": "^1.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "vara": "^1.4.1"

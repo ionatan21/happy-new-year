@@ -11,6 +11,25 @@
   z-index: 100;
 }
 
+.made-by {
+  color: white;
+  font-size: 1.5rem;
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+  overflow-x: hidden;
+  background-color: transparent;
+  font-family: "Allura", cursive;
+  margin-bottom: 50px;
+  animation: fade-in-down 1s ease-out forwards;
+
+  a {
+    color: red;
+  }
+}
+
 @keyframes fade-in-down {
   0% {
     opacity: 0;
@@ -21,7 +40,6 @@
     transform: translateY(0);
   }
 }
-
 
 @media (min-width: 600px) {
   .title {
@@ -81,6 +99,6 @@
     user-select: none;
     animation: fade-in-down 1s ease-out forwards;
     animation-delay: 200ms;
-    opacity: 0; 
+    opacity: 0;
   }
 }
