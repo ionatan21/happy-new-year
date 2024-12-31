@@ -79,7 +79,7 @@ const CountdownToNewYear = () => {
           </p>
         </div>
       )}
-      <p className="made-by">Hecho por <a href="">Jonatan</a></p>
+      <p className="made-by">Hecho por <a href="https://portfolio-jonatan-barrios.vercel.app/">Jonatan</a></p>
       <Background activateFireworks={showTypewriter} />
     </>
   );
